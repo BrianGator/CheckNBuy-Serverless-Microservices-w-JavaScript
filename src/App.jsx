@@ -1,7 +1,8 @@
 // Written by Brian McCarthy
 import { useState, useEffect } from 'react';
-import { ShoppingCart, Store, ChevronRight, Package, ListChecks, Search, AlertCircle, RefreshCw } from 'lucide-react';
+import { ShoppingCart, Store, ChevronRight, Package, ListChecks, Search, AlertCircle, RefreshCw, FileCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { SimulationGallery } from './components/SimulationGallery';
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -14,6 +15,7 @@ export default function App() {
   const [allPrices, setAllPrices] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showGallery, setShowGallery] = useState(false);
 
   // Debounce logic for search field
   useEffect(() => {
@@ -115,14 +117,22 @@ export default function App() {
             <p className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Microservice Deployment Hub</p>
           </div>
         </div>
-        <div className="flex gap-6 items-center">
-          <div className="hidden sm:flex items-center gap-2 bg-slate-800 px-3 py-1.5 rounded-md border border-slate-700">
-            <span className="status-dot online"></span>
-            <span className="text-[11px] font-mono text-slate-300">PROD_LIST:3000</span>
-          </div>
-          <div className="hidden sm:flex items-center gap-2 bg-slate-800 px-3 py-1.5 rounded-md border border-slate-700">
-            <span className="status-dot online"></span>
-            <span className="text-[11px] font-mono text-slate-300">PRICING:3000</span>
+        <div className="flex gap-4 items-center">
+          <button 
+            onClick={() => setShowGallery(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-bold transition-all shadow-lg active:scale-95"
+          >
+            <FileCheck className="w-4 h-4" /> Download Deliverables
+          </button>
+          <div className="hidden sm:flex items-center gap-4">
+            <div className="flex items-center gap-2 bg-slate-800 px-3 py-1.5 rounded-md border border-slate-700">
+              <span className="status-dot online"></span>
+              <span className="text-[11px] font-mono text-slate-300">PROD_LIST:3000</span>
+            </div>
+            <div className="flex items-center gap-2 bg-slate-800 px-3 py-1.5 rounded-md border border-slate-700">
+              <span className="status-dot online"></span>
+              <span className="text-[11px] font-mono text-slate-300">PRICING:3000</span>
+            </div>
           </div>
           <button 
             onClick={fetchProducts}
@@ -132,6 +142,10 @@ export default function App() {
           </button>
         </div>
       </nav>
+
+      <AnimatePresence>
+        {showGallery && <SimulationGallery onClose={() => setShowGallery(false)} />}
+      </AnimatePresence>
 
       <main className="flex-1 max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 p-4 sm:p-8 overflow-hidden">
         {/* Search Sidebar */}
