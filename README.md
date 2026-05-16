@@ -1,7 +1,5 @@
 # CheckNBuy - Product Evaluation & Dealer Pricing Microservices
 
-Written by Brian McCarthy
-
 ## Overview
 CheckNBuy is a robust product comparison application built with a microservices architecture. It allows users to search for products, evaluate distribution dealers, and compare live pricing data fetched from distributed backend services.
 
@@ -41,8 +39,6 @@ The application simulates three distinct microservices running within a single s
 
 ### Final Project Task Status & Deliverables
 
-Written by Brian McCarthy
-
 **Task 1: Product Details Microservice Deployment**
 - **Status**: COMPLETED. The microservice logic is deployed and accessible via the `/api/products` endpoint. It successfully serves the product catalog data sourced from the `products.json` repository logic.
 - **Deliverable**: [Download product_details_deploy.png from App]
@@ -80,9 +76,6 @@ Written by Brian McCarthy
 - **Deliverable**: [Download product_all_dealers_prices.png from App]
 
 **Note**: To retrieve the required screenshots (PNG files) for your project submission, click the **"Download Deliverables"** button in the top navigation bar of the live application. This hub generates high-fidelity simulation PNGs specifically for your project tasks.
-
----
-Written by Brian McCarthy
 
 ## How to Use
 1. **Search**: Type a product name (e.g., "Laptop") in the search bar on the left.
