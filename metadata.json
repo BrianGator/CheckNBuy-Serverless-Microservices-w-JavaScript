@@ -1,0 +1,7 @@
+{
+  "name": "CheckNBuy Microservices Evaluation",
+  "description": "A product comparison and dealer pricing evaluation application integrated across multiple microservices logic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"],
+  "attribution": "Written by Brian McCarthy"
+}
